@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("https://static.vecteezy.com/system/resources/thumbnails/026/273/663/original/educational-back-to-school-animated-background-with-science-and-educational-elements-4k-motion-graphic-2d-animation-footage-free-video.jpg");
+    background-size: cover;
+    background-color: #f0f2f5;
+
+}
+
+.container {
+    border: 3px solid #242746;
+    border-radius:10px ;
+    
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 600px;
+    
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.user-input-box {
+    margin-bottom: 15px;
+}
+
+.user-input-box label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.user-input-box input[type="text"],
+.user-input-box input[type="password"],
+.user-input-box select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; 
+    border: 1px solid #d3cccc;
+    border-radius: 4px;
+}
+
+.units-category {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: large;
+    font-weight: 700;
+}
+
+.units-category div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-submit-btn input[type="submit"],
+.form-submit-btn input[type="reset"] {
+    flex: 1; /* Allows buttons to grow and fill the available space equally */
+    padding: 10px;
+    border: none;
+    background-color: #2d2d3b;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-submit-btn input[type="submit"]:hover,
+.form-submit-btn input[type="reset"]:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .units-category div {
+        flex-direction: column;
+    }
+    .units-category input[type="text"] {
+        margin-bottom: 10px; /* Ensure spacing between inputs on smaller screens */
+    }
+}

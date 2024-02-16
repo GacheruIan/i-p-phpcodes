@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>PHP FORM</title>
+  <meta name="viewport" content="width=device-width,
+      initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="form-title">PHP FORM</h1>
+    <form action= "result.php" method="post" name="php-form">
+      <div class="main-user-info">
+        <div class="user-input-box">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name"required/>
+        </div>
+        <div class="user-input-box">
+          <label for="Registration-Number">Registration-Number</label>
+          <input type="text" id="regno" name="regno" placeholder="Enter Registration-Number" required />
+        </div>
+        <div class="user-input-box">
+          <label for="Choose Course">Course</label>
+          <select id="course" name="course" placeholder="Enter Course" required>
+            <option>Choose Course Below</option>
+            <option value="BIT">BIT</option>
+            <option value="BBIT">BBIT</option>
+          </select>
+
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number" required />
+          </div>
+          <!-- <div class="user-input-box">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" />
+          </div>
+          <div class="user-input-box">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
+          </div> -->
+        </div>
+        <div class="user-input-box">
+          <div class="units-category">
+            <div>
+              JavaSript <input type="text" name="JavaScript" style="width:50px; height:22px;margin-right:32px;"required>
+              Algorithms1<input type="text" name="Algorithms" style="width:50px; height:22px;"required>
+            </div><br>
+            <div>
+              SmallTalk<input type="text" name="SMT" style="width:50px; height:22px;margin-right:32px;"required>
+              LaravelPHP<input type="text" name="PHP" style="width:50px; height:22px"required>
+            </div>
+
+          </div>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+        </div>
+    </form>
+  </div>
+</body>
+
+</html>
