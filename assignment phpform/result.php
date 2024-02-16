@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         body {
-            background-color: violet; 
+            background-color: #3C4080; 
             color: #FFFFFF; 
             font-family: Arial, sans-serif; 
         }
