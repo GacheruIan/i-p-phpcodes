@@ -54,7 +54,7 @@
 
        $myconn=mysqli_connect($host,$user,$pwd,$db);
        if($myconn){
-        echo "connection is okay";
+        echo "<b><u>connection is okay</u></b>";
        }else{
         echo "error";
        }
@@ -111,7 +111,7 @@
               error_reporting(E_ALL);
               
               if (mysqli_query($myconn, $insert)) {
-                echo "successfully added<br>";
+                echo "<u><b>successfully added</b></u><br>";
             } else {
                 echo "Error: " . $insert . "<br>" . mysqli_error($myconn);
             }

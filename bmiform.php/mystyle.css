@@ -6,6 +6,7 @@ body {
     padding: 20px;
 }
 
+
 .main-form-container {
     background-color: #444;
     padding: 20px;
@@ -66,7 +67,4 @@ label {
 
 h1, h2, h3 {
     color: #fff;
-}
-h1{
-    margin-left: 35%;
 }
