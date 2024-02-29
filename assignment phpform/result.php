@@ -52,7 +52,7 @@
     echo "<table>";
     echo "<tr><th>Admission Number</th><td>$registration</td></tr>";
     echo "<tr><th>Phone Number</th><td>$phoneNumber</td></tr>";
-    echo "<tr><th>Sum of Units</th><td>$sum</td></tr>";
+    echo "<tr><th>Total Unit Score is</th><td>$sum</td></tr>";
     echo "<tr><th>Average Score</th><td>$average</td></tr>";
     
     $resultText = "";
