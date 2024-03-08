@@ -91,17 +91,26 @@
         echo "<p>Obesity can increase the risk of various health conditions. It's crucial to seek medical advice for comprehensive assessment and personalized recommendations.</p>";
         echo "<p>Your doctor can guide you on appropriate weight management strategies, including potential programs or interventions that align with your individual needs.</p>";
     }
-    
-    
-    echo "<tr><td>Name entered is</td><td>$name</td></tr>";
-    echo "<tr><td>You joined us on date</td><td>$date</td></tr>";
-    echo "<tr><td>Age group categorised under</td><td>$age</td></tr>";
-    echo "<tr><td>Gender</td><td>$gender</td></tr>";
-    echo "<tr><td>Height</td><td>$height</td></tr>";
-    echo "<tr><td>Weight</td><td>$weight</td></tr>";
-    echo "<tr><td>Session(s)</td><td>$sesh</td></tr>";
-    echo "<tr><td>Willingness to train session specified</td><td>$push</td></tr>";
-    echo "<tr><td>Contact</td><td>$mail</td></tr>";
+// Fetch records from the database
+$result = mysqli_query($myconn, "SELECT * FROM irecords");
+
+// Check if there are any records
+if(mysqli_num_rows($result) > 0) {
+    // Loop through each record
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<tr><td>Name entered is</td><td>" . htmlspecialchars($row['name']) . "</td></tr>";
+        echo "<tr><td>You joined us on date</td><td>" . htmlspecialchars($row['date']) . "</td></tr>";
+        echo "<tr><td>Age group categorised under</td><td>" . htmlspecialchars($row['age_range']) . "</td></tr>";
+        echo "<tr><td>Gender</td><td>" . htmlspecialchars($row['gender']) . "</td></tr>";
+        echo "<tr><td>Height</td><td>" . htmlspecialchars($row['height']) . "</td></tr>";
+        echo "<tr><td>Weight</td><td>" . htmlspecialchars($row['weight']) . "</td></tr>";
+        echo "<tr><td>Session(s)</td><td>" . htmlspecialchars($row['sessions']) . "</td></tr>";
+        echo "<tr><td>Willingness to train session specified</td><td>" . htmlspecialchars($row['push_intensity']) . "</td></tr>";
+        echo "<tr><td>Contact</td><td>" . htmlspecialchars($row['email']) . "</td></tr>";
+    }
+} else {
+    echo "<tr><td colspan='2'>No records found.</td></tr>";
+}
 
 
 
