@@ -1,40 +1,59 @@
-<?php
-// Assuming you're using the same database credentials
-$host = "localhost";
-$user = "root";
-$pwd = "";
-$db = "iandb";
+<html>
 
-// Create connection
-$myconn = mysqli_connect($host, $user, $pwd, $db);
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-// Check connection
-if (!$myconn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+        h2 {
+            color: black;
+        }
 
-// Retrieve the 'id' from the URL parameter
-$id = $_GET['id'];
+        a {
+            display: inline-block;
+            background-color: gray;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
 
-// Prepare the DELETE statement
-$sql = "DELETE FROM irecords WHERE id = ?";
+        a:hover {
+            background-color: #0056b3;
+        }
 
-// Prepare statement
-$stmt = mysqli_prepare($myconn, $sql);
+        .message {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
 
-// Bind parameters and execute
-mysqli_stmt_bind_param($stmt, "i", $id);
-mysqli_stmt_execute($stmt);
+<body>
+    <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
 
-// Check if any rows were affected
-if (mysqli_stmt_affected_rows($stmt) > 0) {
-    // Redirect back to your main page or display a success message
-    header("Location: result2.php");
-} else {
-    echo "Error deleting record: " . mysqli_error($myconn);
-}
+    require_once("dbconnect.php");
 
-// Close statement and connection
-mysqli_stmt_close($stmt);
-mysqli_close($myconn);
-?>
+    $id = $_REQUEST['id'];
+
+    $del = mysqli_query($myconn, "DELETE FROM Clients WHERE id='$id'");
+    if ($del) {
+        echo "<h2><b>Record Successfully Deleted!!</b></h2>";
+    } else {
+        echo "Record Not Deleted!! Error: " . mysqli_error($myconn);
+    }
+    echo "<br><a href='insert.php'> Go back to records list</a>";
+    ?>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+CREATE TABLE Clients (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    age_range VARCHAR(50),
+    gender ENUM('Male', 'Female', 'Prefer not to say') NOT NULL,
+    height DECIMAL(5,2),
+    weight DECIMAL(5,2),
+    sessions VARCHAR(255),
+    push_intensity INT(11),
+    email VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+ALTER TABLE Clients ADD COLUMN phone VARCHAR(20);
